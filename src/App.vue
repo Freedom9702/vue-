@@ -1,9 +1,13 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div class="container">
+    <div class="box">
+      <header class="header"></header>
+      <div class="content"></div>
+    </div>
+    <footer class="footer"></footer>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -11,13 +15,34 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+<style lang="scss">
+@import '~@/lib/reset.scss';
+html, body, .container {
+  @include rect(100%, 100%); // width: 100%;height: 100%;
+}
+
+
+.container {
+  @include flexbox(); // display: flex;display:box;.....
+  @include flex-direction(column); // flex-direction: column；
+  .box {
+    @include flex(); // flex:1
+    @include rect(100%, auto);
+    @include flexbox(); // display: flex;display:box;.....
+    @include flex-direction(column); // flex-direction: column；
+    .header {
+      @include rect(100%, 0.44rem);
+      @include background-color(#f66);
+    }
+    .content {
+      @include flex(); // flex:1
+      @include rect(100%, auto);
+    }
+  }
+  .footer {
+     @include rect(100%, 0.5rem);
+     @include background-color(#ccc); // background-color: #ccc
+  }
 }
 </style>
