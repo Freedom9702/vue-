@@ -26,6 +26,6 @@ export default {
 .banner {
   height: 1.5rem;
   border-bottom: 1px solid #ccc;
-  background:red;
+  background:yellow;
 }
 </style>
